@@ -26,7 +26,9 @@ const handler = NextAuth({
   jwt: {
     encode: async ({ token }) => {
       const alg = 'RS256';
-      return new jose.SignJWT(token)
+      // token may be undefined, fallback to empty payload
+      const payload: jose.JWTPayload = token ? (token as jose.JWTPayload) : {};
+      return new jose.SignJWT(payload)
         .setProtectedHeader({ alg })
         .setIssuedAt()
         .setExpirationTime('2h')
