@@ -1,0 +1,106 @@
+/* Styles globaux */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #121212; /* Fond sombre */
+    color: #f0f0f0; /* Texte clair */
+    line-height: 1.6;
+  }
+
+  a {
+    color: #80cbc4; /* Couleur accentuée pour les liens */
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  a:hover {
+    color: #26a69a; /* Couleur de survol plus foncée */
+  }
+
+  /* Navbar */
+  .navbar {
+    background-color: #1e1e1e; /* Fond légèrement plus clair pour la navbar */
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333; /* Ligne de séparation subtile */
+  }
+
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase; /* Style brutal */
+    letter-spacing: 0.1em;
+  }
+
+  .navbar-nav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-item {
+    margin-left: 1.5rem;
+  }
+
+  .nav-link {
+    color: #f0f0f0;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    display: block;
+    position: relative; /* Pour l'effet de soulignement */
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #80cbc4;
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  /* Footer */
+  .footer {
+    background-color: #1e1e1e; /* Fond légèrement plus clair pour le footer */
+    padding: 2rem;
+    text-align: center;
+    border-top: 1px solid #333; /* Ligne de séparation subtile */
+    margin-top: 4rem; /* Espacement avec le contenu principal */
+  }
+
+  .footer-text {
+    color: #aaa;
+    font-size: 0.9rem;
+  }
+
+  /* Effets de style impactants (exemple - ombre portée subtile) */
+  .navbar, .footer {
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Style brutal pour les boutons (exemple) */
+  .button {
+    background-color: #333;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase; /* Ajout d'un style brutal */
+    letter-spacing: 0.05em; /* Ajout d'un style brutal */
+  }
+
+  .button:hover {
+    background-color: #555;
+  }
