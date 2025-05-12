@@ -6,7 +6,7 @@ export default function Home() {
       <h1>Gateway SSO</h1>
       <nav>
         <ul>
-          <li><Link href="/app1">App1</Link></li>
+          <li><Link href="https://code-builder-git-massrework-souphianejs-projects.vercel.app">App1</Link></li>
           <li><Link href="/app2">App2</Link></li>
         </ul>
       </nav>
