@@ -1,30 +1,31 @@
 'use client';
-
-import { signIn, useSession } from 'next-auth/react';
+import { useState } from 'react';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../firebase/client';
 import { useRouter } from 'next/navigation';
 
 export default function LoginPage() {
-  const { data: session } = useSession();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const router = useRouter();
 
-  if (session) {
+  const handleLogin = async () => {
+    const userCred = await signInWithEmailAndPassword(auth, email, password);
+    const idToken = await userCred.user.getIdToken();
+    // Call gateway to set session cookie
+    await fetch('/api/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ idToken })
+    });
     router.push('/app1');
-    return null;
-  }
+  };
 
   return (
     <div>
-      <h1>Connexion</h1>
-      <form onSubmit={e => {
-        e.preventDefault();
-        const u = (e.currentTarget.username as HTMLInputElement).value;
-        const p = (e.currentTarget.password as HTMLInputElement).value;
-        signIn('credentials', { username: u, password: p, callbackUrl: '/app1' });
-      }}>
-        <input name="username" placeholder="Username" required />
-        <input name="password" type="password" placeholder="Password" required />
-        <button type="submit">Se connecter</button>
-      </form>
+      <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Email" />
+      <input type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" />
+      <button onClick={handleLogin}>Connexion</button>
     </div>
   );
 }
