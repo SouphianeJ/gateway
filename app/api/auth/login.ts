@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken'
 
 const JWT_SECRET = process.env.JWT_SECRET!
 const TOKEN_EXPIRY = '1h'
-const CLIENT_EXCHANGE = 'https://client-votre-projet.vercel.app/api/auth/exchange'
+const CLIENT_EXCHANGE = 'https://code-builder-git-massrework-souphianejs-projects.vercel.app/api/auth/exchange'
 
 async function verifyUser(email: string, password: string) {
   // À remplacer par votre logique (BDD, Firebase Admin…)
