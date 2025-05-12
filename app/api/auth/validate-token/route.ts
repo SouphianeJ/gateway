@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { adminAuth } from '../../../../lib/firebaseAdmin';
+import { adminAuth } from '@firebase/firebaseAdmin';
 
 export async function GET(req: NextRequest) {
   const sessionCookie = req.cookies.get(process.env.SESSION_COOKIE_NAME!)?.value;

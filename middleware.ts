@@ -6,8 +6,7 @@ export async function middleware(req: NextRequest) {
   if (
     url.pathname.startsWith('/api/auth') ||
     url.pathname.startsWith('/_next') ||
-    url.pathname.startsWith('/login') ||
-    url.pathname === '/favicon.ico'
+    url.pathname.startsWith('/login') 
   ) return NextResponse.next();
 
   const sessionCookie = req.cookies.get(process.env.SESSION_COOKIE_NAME!)?.value;
