@@ -11,7 +11,7 @@
     "next": "14.x",
     "react": "18.x",
     "react-dom": "18.x",
-    "firebase-admin": "^11.8.0",
-    "firebase/auth": "^9.22.2"
+    "firebase": "^11.5.0",
+    "firebase-admin": "^13.2.0"
   }
 }
