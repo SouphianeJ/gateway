@@ -12,7 +12,6 @@
     "react": "18.x",
     "react-dom": "18.x",
     "firebase-admin": "^11.8.0",
-    "firebase/app": "^9.22.2",
     "firebase/auth": "^9.22.2"
   }
 }
