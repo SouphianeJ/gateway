@@ -1,13 +1,14 @@
 'use client'
-
 import { useState, useEffect } from 'react'
 
 export default function LoginPage() {
-  const [callbackUrl, setCallbackUrl] = useState<string>('/protected')
+  const [callbackUrl, setCallbackUrl] = useState('/protected')
 
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search)
-    setCallbackUrl(params.get('callbackUrl') || '/protected')
+    const p = new URLSearchParams(window.location.search)
+    if (p.has('callbackUrl')) {
+      setCallbackUrl(decodeURIComponent(p.get('callbackUrl')!))
+    }
   }, [])
 
   return (
@@ -15,10 +16,10 @@ export default function LoginPage() {
       <h1>Connexion</h1>
       <form method="POST" action="/api/auth/login">
         <input type="hidden" name="callbackUrl" value={callbackUrl} />
-        <div style={{ margin: '8px 0' }}>
+        <div>
           <input name="email" type="email" placeholder="Email" required />
         </div>
-        <div style={{ margin: '8px 0' }}>
+        <div style={{ marginTop: 8 }}>
           <input
             name="password"
             type="password"
@@ -26,7 +27,9 @@ export default function LoginPage() {
             required
           />
         </div>
-        <button type="submit">Se connecter</button>
+        <button style={{ marginTop: 12 }} type="submit">
+          Se connecter
+        </button>
       </form>
     </main>
   )
