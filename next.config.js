@@ -3,8 +3,8 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: '/app1/:path*',
-        destination: 'https://app1-xxx.vercel.app/:path*'
+        source: '/code-builder/:path*',
+        destination: 'https://code-builder.vercel.app/:path*'
       },
       {
         source: '/app2/:path*',

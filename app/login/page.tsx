@@ -18,7 +18,7 @@ export default function LoginPage() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ idToken })
     });
-    router.push('/app1');
+    router.push('https://code-builder-git-massrework-souphianejs-projects.vercel.app');
   };
 
   return (
