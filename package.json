@@ -21,6 +21,8 @@
     "jose": "^4.14.4",
     "next-auth": "^4.24.5",
     "bcryptjs" : "2.4.3"
+    "firebase/app": "^9.22.2",
+    "firebase/auth": "^9.22.2"
   },
   "devDependencies": {
     "@types/node": "^20.11.20",
