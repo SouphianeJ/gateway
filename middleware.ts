@@ -16,7 +16,7 @@ export async function middleware(req: NextRequest) {
 
   // Validate session cookie via validate-token endpoint
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_AUTH_URL}/api/auth/validate-token`,
+    `${process.env.NEXT_PUBLIC_AUTH_URL}/api/session/validate-token`,
     { headers: { cookie: req.headers.get('cookie') || '' } }
   );
   if (res.ok) return NextResponse.next();

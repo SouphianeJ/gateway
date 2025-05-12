@@ -13,7 +13,7 @@ export default function LoginPage() {
     const userCred = await signInWithEmailAndPassword(auth, email, password);
     const idToken = await userCred.user.getIdToken();
     // Call gateway to set session cookie
-    await fetch('/api/auth/login', {
+    await fetch('/api/session/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ idToken })
