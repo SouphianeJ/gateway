@@ -104,3 +104,46 @@ body {
   .button:hover {
     background-color: #555;
   }
+
+  /* Gallery styles */
+  .container {
+    padding: 2rem;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    overflow: hidden;
+    text-decoration: none;
+    color: #f0f0f0;
+    transition: transform 0.3s ease;
+  }
+
+  .project-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .project-color {
+    height: 10px;
+  }
+
+  .project-details {
+    padding: 1rem;
+  }
+
+  .project-details h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .project-details p {
+    font-size: 0.9rem;
+    color: #aaa;
+  }
