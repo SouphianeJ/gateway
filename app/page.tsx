@@ -1,7 +1,8 @@
 import Link from 'next/link';
 
 const projects = [
-  {
+
+{
     name: 'Code Builder',
     url: 'https://code-builder-git-massrework-souphianejs-projects.vercel.app',
     description: 'A tool for building code snippets.',
@@ -14,9 +15,15 @@ const projects = [
     color: '#FFD700',
   },
   {
-    name: 'Next.js SSR',
+    name: 'Cmd sheet Cheat',
     url: 'https://cmd-sheetcheat.vercel.app/',
     description: 'Next.js Server-Side Rendering examples.',
+    color: '#9F00FF',
+  },
+  {
+    name: 'Get repo code',
+    url: 'https://getrepocode.vercel.app/',
+    description: 'Export Github repo code.',
     color: '#9F00FF',
   },
 ];
