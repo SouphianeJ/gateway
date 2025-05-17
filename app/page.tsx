@@ -8,6 +8,13 @@ const projects = [
     description: 'A tool for building code snippets.',
     color: '#64FFDA',
   },
+
+{
+    name: 'To Do ',
+    url: 'https://todozz-chi.vercel.app/',
+    description: 'to dos.',
+    color: '#FFD300',
+  },
   {
     name: 'Prompt Gallery',
     url: 'https://prompt-shop.vercel.app/',
